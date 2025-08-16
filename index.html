@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<title>Rent vs Buy Calculator</title>
+<title>Rent vs Buy Calculator (RU)</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -39,84 +39,84 @@
 </head>
 <body>
 <div class="container">
-  <h1>Купувати або орендувати калькулятор</h1>
+  <h1>Калькулятор: Покупать или Арендовать</h1>
   <div class="tabs">
-    <button class="tab-btn active" data-tab="cash">Купую за свої</button>
-    <button class="tab-btn" data-tab="mortgage">Купую в іпотеку</button>
+    <button class="tab-btn active" data-tab="cash">Покупаю за свои</button>
+    <button class="tab-btn" data-tab="mortgage">Покупаю в ипотеку</button>
   </div>
 
   <div id="cash" class="tab-content active">
-    <h2>Купую за свої</h2>
+    <h2>Покупаю за свои</h2>
     <div class="inputs">
-      <label>Ціна покупки, $<span class="tip" title="Скільки коштує житло">ℹ️</span>
+      <label>Цена покупки, $<span class="tip" title="Скилько стоит объект">ℹ️</span>
         <input id="price" type="number" min="0" step="500" value="100000">
       </label>
-      <label>Місячна оренда (чистою сумою), $<span class="tip" title="Сума оренди, яку сплачує орендар">ℹ️</span>
+      <label>Месячная аренда (чистая сумма), $<span class="tip" title="Сумма аренды, которую оплачивает арендатор">ℹ️</span>
         <input id="rent" type="number" min="0" step="10" value="500">
       </label>
-      <label>Щорічне підвищення оренди, %<span class="tip" title="На скільки відсотків зростатиме оренда кожного року">ℹ️</span>
+      <label>Ежегодное повышение аренды, %<span class="tip" title="На сколько процентов растет ставка аренды в год">ℹ️</span>
         <input id="rentGrowth" type="number" min="0" step="0.1" value="6">
       </label>
-      <label>Коефіцієнт заповнюваності, %<span class="tip" title="Середній рівень завантаження">ℹ️</span>
+      <label>Коэффициент заполняемости, %<span class="tip" title="Средний уровень заполняемости">ℹ️</span>
         <input id="occupancy" type="number" min="0" max="100" step="1" value="100">
       </label>
-            <label>Витрати на утримання, % / yr<span class="tip" title="Ремонт, страховка тощо в процентах від вартості житла на рік">ℹ️</span>
+            <label>Расходы на содержание, % / yr<span class="tip" title="Ремонт, страховка и т.д. в процентах от стоимость объекта в год">ℹ️</span>
         <input id="expenses" type="number" min="0" step="0.1" value="1">
       </label>
-      <label>Вартість транзакції купити-продати, %<span class="tip" title="Витрати (комісії, податки тощо) при купівлі та продажу">ℹ️</span>
+      <label>Стоимость транзакции купить-продать, %<span class="tip" title="Расходы (комиссии, налоги и т.д.) при покупке и продаже">ℹ️</span>
         <input id="txCost" type="number" min="0" step="0.1" value="8">
       </label>
-      <label>Очікуване зростання цін (USD), % / yr<span class="tip" title="Очікуване зростання вартості житла на рік (в USD)">ℹ️</span>
+      <label>Ожидаемый рост цен (USD), % / yr<span class="tip" title="Ожидаемый рост цены объекта в год (в USD)">ℹ️</span>
         <input id="growth" type="number" min="0" step="0.1" value="3">
       </label>
-      <label>Альтернативний дохід (USD), % / yr<span class="tip" title="Прибутковість альтернативних інвестицій (наприклад ОВГЗ-USD під 4%)">ℹ️</span>
+      <label>Альтернативный доход (USD), % / yr<span class="tip" title="Доходность альтернативных инвестиций (например ОВГЗ-USD под 4%)">ℹ️</span>
         <input id="altReturn" type="number" min="0" step="0.1" value="6">
       </label>
     </div>
     <button id="calcCash" class="calc-btn">Calculate</button>
     <div id="cashOutput" class="results"></div>
-    <p class="disclaimer">* Оцінки не враховують податки.</p>
+    <p class="disclaimer">* Оценки не учитывают налоги.</p>
   </div>
 
   <div id="mortgage" class="tab-content">
-    <h2>Купую в іпотеку</h2>
+    <h2>Покупаю в ипотеку</h2>
     <div class="inputs">
-      <label>Ціна покупки, $<span class="tip" title="Скільки коштує житло">ℹ️</span>
+      <label>Цена покупки, $<span class="tip" title="Скольки стоит объект">ℹ️</span>
         <input id="priceM" type="number" min="0" step="500" value="100000">
       </label>
-      <label>Місячна оренда (чистою сумою), $<span class="tip" title="Сума оренди за місяць, яку сплачує орендар">ℹ️</span>
+      <label>Месячня аренда (чистая сумма), $<span class="tip" title="Сумма аренды в месяць, которую платит арендатор">ℹ️</span>
         <input id="rentM" type="number" min="0" step="10" value="500">
       </label>
-      <label>Щорічне підвищення оренди, %<span class="tip" title="На скільки відсотків зростатиме оренда кожного року">ℹ️</span>
+      <label>Ежегодное повышение аренды, %<span class="tip" title="На сколько процентов растет ставка аренды в год">ℹ️</span>
         <input id="rentGrowthM" type="number" min="0" step="0.1" value="6">
       </label>
-      <label>Коефіцієнт заповнюваності, %<span class="tip" title="Середній рівень завантаження">ℹ️</span>
+      <label>Коеффициент заполняемости, %<span class="tip" title="Средний уровень заполняемости">ℹ️</span>
         <input id="occupancyM" type="number" min="0" max="100" step="1" value="100">
       </label>
-            <label>Витрати на утримання, % / yr<span class="tip" title="Ремонт, страховка тощо в процентах від вартості житла на рік">ℹ️</span>
+            <label>Расходы на содержание, % / yr<span class="tip" title="Ремонт, страховка и т.д. в процентах от стоимости жилья в год">ℹ️</span>
         <input id="expensesM" type="number" min="0" step="0.1" value="1">
       </label>
-      <label>Вартість транзакції купити-продати, %<span class="tip" title="Витрати (комісії, податки тощо) при купівлі та продажу">ℹ️</span>
+      <label>Стоимость транзакции купить-продать, %<span class="tip" title="Расходы (комиссии, налоги и т.п.) при покупке и продаже">ℹ️</span>
         <input id="txCostM" type="number" min="0" step="0.1" value="8">
       </label>
-      <label>Очікуване зростання цін (USD), % / yr<span class="tip" title="Очікуване зростання вартості житла на рік (в USD)">ℹ️</span>
+      <label>Ожидаемый рост цен (USD), % / yr<span class="tip" title="Ожидаемый рост цены объекта в год (в USD)">ℹ️</span>
         <input id="growthM" type="number" min="0" step="0.1" value="3">
       </label>
-      <label>Іпотечна ставка, % / yr<span class="tip" title="Відсоток за кредитом">ℹ️</span>
+      <label>Ипотечная ставка, % / yr<span class="tip" title="Процент по кредиту">ℹ️</span>
         <input id="interest" type="number" min="0" step="0.1" value="7">
       </label>
-      <label>LTV (борг / ціна), %<span class="tip" title="Розмір кредиту в % від ціни">ℹ️</span>
+      <label>LTV (долг / цена), %<span class="tip" title="Размер кредита в % от цены">ℹ️</span>
         <input id="ltv" type="number" min="0" step="1" value="80">
       </label>
-      <label>Альтернативний дохід (USD), % / yr<span class="tip" title="Прибутковість альтернативних інвестицій (наприклад ОВГЗ-USD під 4%)">ℹ️</span>
+      <label>Альтернативный доход (USD), % / yr<span class="tip" title="Доходность альтернативных инвестиций (например ОВГЗ-USD под 4%)">ℹ️</span>
         <input id="altReturnM" type="number" min="0" step="0.1" value="6">
       </label>
     </div>
     <button id="calcMort" class="calc-btn">Calculate</button>
     <div id="mortgageOutput" class="results"></div>
-    <p class="disclaimer">* Оцінки не враховують податки.</p>
+    <p class="disclaimer">* Оценки не учитывают налоги.</p>
   </div>
-  <div class="footer"><a href="https://t.me/HugsFund/16294" target="_blank">Детальніше про методику</a></div>
+  <div class="footer"><a href="https://t.me/HugsFund/16294" target="_blank">Детальнее про методику</a></div>
 </div>
 <script>
 function showTab(name){
@@ -146,14 +146,14 @@ function calcCash(){
   const net=gross-exp;
   const rentGrowthYield=gross*(rentInc/100);
   const d=net+rentGrowthYield+growth-alt;
-  let br=Infinity, verdict='Фінансово не окупається при зазначених параметрах',cls='red';
-  if(d>0){ br=tx/d; verdict='Вигідно володіти від '+fmtYr(br)+' років'; cls='green'; }
+  let br=Infinity, verdict='Финансово не окупается по заданным параметрам',cls='red';
+  if(d>0){ br=tx/d; verdict='Выгодно владеть от '+fmtYr(br)+' лет'; cls='green'; }
     const html='<table>'+
-    '<tr><td>Gross орендний дохід, % річних</td><td>'+fmt(gross)+' %</td></tr>'+
-    '<tr><td>Операційні витрати, % річних</td><td>'+fmt(exp)+' %</td></tr>'+
-    '<tr><td>Net орендний дохід, % річних</td><td>'+fmt(net)+' %</td></tr>'+
-    '<tr><td>Річна перевага нерухомості над альтернативою </td><td>'+fmt(d)+' %</td></tr>'+
-    (br===Infinity?'' : '<tr><td>Вигідно володіти від ... років</td><td>'+highlight(br)+'</td></tr>')+
+    '<tr><td>Gross арендный доход, % годовых</td><td>'+fmt(gross)+' %</td></tr>'+
+    '<tr><td>Операцийные расходы, % годовых</td><td>'+fmt(exp)+' %</td></tr>'+
+    '<tr><td>Net арендный доход, % годовых</td><td>'+fmt(net)+' %</td></tr>'+
+    '<tr><td>Годовое преимущество недвижимости над альтернативою </td><td>'+fmt(d)+' %</td></tr>'+
+    (br===Infinity?'' : '<tr><td>Выгодно владеть от ... лет</td><td>'+highlight(br)+'</td></tr>')+
     '</table><div class="'+cls+'">'+(br===Infinity?verdict:verdict)+'</div>';
   document.getElementById('cashOutput').innerHTML=html;
 }
@@ -175,14 +175,14 @@ function calcMortgage(){
     const net=gross-exp;
     const rentGrowthYield=gross*(rentInc/100);
     const d=net+rentGrowthYield+growth-(intr*ltv/100)-(downFrac*alt);
-  let br=Infinity, verdict='Фінансово не окупається при зазначених параметрах',cls='red';
-  if(d>0){ br=tx/d; verdict='Вигідно володіти від '+fmtYr(br)+' років'; cls='green'; }
+  let br=Infinity, verdict='Финансово не окупается по заданным параметрам',cls='red';
+  if(d>0){ br=tx/d; verdict='Выгодно владеть от '+fmtYr(br)+' лет'; cls='green'; }
   const html='<table>'+
-    '<tr><td>Gross орендний дохід, % річних</td><td>'+fmt(gross)+' %</td></tr>'+
-    '<tr><td>Операційні витрати, % річних</td><td>'+fmt(exp)+' %</td></tr>'+
-    '<tr><td>Net орендний дохід, % річних</td><td>'+fmt(net)+' %</td></tr>'+
-    '<tr><td>Річна перевага нерухомості над альтернативою </td><td>'+fmt(d)+' %</td></tr>'+
-    (br===Infinity?'' : '<tr><td>Вигідно володіти від ... років</td><td>'+highlight(br)+'</td></tr>')+
+    '<tr><td>Gross арендный доход, % годовых</td><td>'+fmt(gross)+' %</td></tr>'+
+    '<tr><td>Операцийные расходы, % годовых</td><td>'+fmt(exp)+' %</td></tr>'+
+    '<tr><td>Net арендный доход, % годовых</td><td>'+fmt(net)+' %</td></tr>'+
+    '<tr><td>Годовое преимущество недвижимости над альтернативою </td><td>'+fmt(d)+' %</td></tr>'+
+    (br===Infinity?'' : '<tr><td>Выгодно владеть от ... лет</td><td>'+highlight(br)+'</td></tr>')+
     '</table><div class="'+cls+'">'+(br===Infinity?verdict:verdict)+'</div>';
   document.getElementById('mortgageOutput').innerHTML=html;
 }
